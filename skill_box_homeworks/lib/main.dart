@@ -1,5 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:skill_box_homeworks/hw_2.dart';
+import 'package:skill_box_homeworks/hw_3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork3()));
+                },
+                child: Text('Go to Home3 Screen')
             ),
           ],
         ),
