@@ -6,7 +6,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeWork3 extends StatefulWidget {
-  const HomeWork3({Key? key}) : super(key: key);
+  const HomeWork3({Key key}) : super(key: key);
 
   @override
   _HomeWork3State createState() => _HomeWork3State();

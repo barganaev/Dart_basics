@@ -6,7 +6,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class HW2Screen extends StatefulWidget {
-  const HW2Screen({Key? key}) : super(key: key);
+  const HW2Screen({Key key}) : super(key: key);
 
   @override
   _HW2ScreenState createState() => _HW2ScreenState();
@@ -233,7 +233,7 @@ class HomeWork2_5 {
 
 // HomeWork #6
 class Point/*HomeWork2_6*/ {
-  late double x, y, z;
+  double x, y, z;
   var result;
 
   Point/*HomeWork2_6*/(this.x, this.y, this.z);

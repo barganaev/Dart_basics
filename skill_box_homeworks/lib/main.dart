@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 // Project imports:
 import 'package:skill_box_homeworks/hw_2.dart';
 import 'package:skill_box_homeworks/hw_3.dart';
+import 'package:skill_box_homeworks/hw_4.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key key, @required this.title}) : super(key: key);
 
   final String title;
 
@@ -49,25 +50,29 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
+            // HomeWork #2
             ElevatedButton(
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => HW2Screen()));
               },
               child: Text('Go to Another Screen')
             ),
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
 
+            // HomeWork #3
             ElevatedButton(
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork3()));
                 },
                 child: Text('Go to Home3 Screen')
+            ),
+
+            // HomeWork #4
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork4()));
+                },
+                child: Text('Go to Home4 Screen')
             ),
           ],
         ),
