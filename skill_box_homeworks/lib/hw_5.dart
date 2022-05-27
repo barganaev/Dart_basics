@@ -24,9 +24,9 @@ class _HomeWork5State extends State<HomeWork5> with SingleTickerProviderStateMix
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void openDrawer() {
-    scaffoldKey.currentState.openDrawer();
-  }
+  // void openEndDrawer() {
+  //   scaffoldKey.currentState.openEndDrawer();
+  // }
 
   TabController _tabController;
   int _currentTabIndex = 0;
@@ -48,16 +48,71 @@ class _HomeWork5State extends State<HomeWork5> with SingleTickerProviderStateMix
     return Scaffold(
       appBar: AppBar(
         title: Text('HomeWork #5'),
+        actions: [
+          Builder(
+            builder: (context) => IconButton(
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+              icon: Icon(Icons.account_box)
+              ),
+          )
+        ],
+      ),
+      endDrawer: Drawer(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 40,
+              backgroundImage: AssetImage('assets/minion.jpg', ),
+            ),
+            SizedBox(height: 10,),
+            Text('SkillBox User')
+          ],
+        ),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             DrawerHeader(
               child: CircleAvatar(
-                child: SvgPicture.asset('assets/Hot-Rod-Car-Show-2016070403.svg', width: MediaQuery.of(context).size.width * 0.4,),
-                // radius: 200,
+                radius: 16,
+                backgroundImage: AssetImage(
+                  'assets/minion.jpg'
+                ),
               ),
             ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            ListTile(
+              leading: Icon(Icons.perm_contact_cal),
+              title: Text('Profile'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            ListTile(
+              leading: Icon(Icons.image),
+              title: Text('Images'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.35,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(onPressed: () {}, child: Text('Выход')),
+                    ElevatedButton(onPressed: () {}, child: Text('Регистрация')),
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),
