@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TabItem {
   String title;
@@ -48,7 +49,18 @@ class _HomeWork5State extends State<HomeWork5> with SingleTickerProviderStateMix
       appBar: AppBar(
         title: Text('HomeWork #5'),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: CircleAvatar(
+                child: SvgPicture.asset('assets/Hot-Rod-Car-Show-2016070403.svg', width: MediaQuery.of(context).size.width * 0.4,),
+                // radius: 200,
+              ),
+            ),
+          ],
+        ),
+      ),
       body: TabBarView(
         controller: _tabController,
         children: [
@@ -93,18 +105,6 @@ class _HomeWork5State extends State<HomeWork5> with SingleTickerProviderStateMix
                   label: item.title,
                   icon: item.icon
                 )
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.home),
-              //   label: "Home",
-              // ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.favorite),
-              //   label: "Favorite",
-              // ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.account_box),
-              //   label: "AccountBox",
-              // ),
             ],
           ),
         ),
