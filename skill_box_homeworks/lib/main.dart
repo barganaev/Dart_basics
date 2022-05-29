@@ -7,6 +7,7 @@ import 'package:skill_box_homeworks/hw_3.dart';
 import 'package:skill_box_homeworks/hw_4.dart';
 import 'package:skill_box_homeworks/hw_5.dart';
 import 'package:skill_box_homeworks/hw_6/hw_6.dart';
+import 'package:skill_box_homeworks/hw_7/hw_7.dart';
 
 void main() {
   runApp(const MyApp());
@@ -91,6 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork6()));
                 },
                 child: Text('Go to Home6 Screen')
+            ),
+
+            // HomeWork #7
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HoweWork7()));
+                },
+                child: Text('Go to Home7 Screen')
             ),
           ],
         ),
