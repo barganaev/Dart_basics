@@ -17,14 +17,8 @@ class _HomeWork8State extends State<HomeWork8> {
   bool isFileFounded = false;
   String Ftext;
 
-  _filesFromAsset() async {
-    String files = await fetchFileFromAssets("assets/data");
-    print(files);
-  }
-
   @override
   void initState() {
-    // _filesFromAsset();
     super.initState();
   }
 
@@ -59,8 +53,6 @@ class _HomeWork8State extends State<HomeWork8> {
                         },
                         icon: Icon(Icons.search),
                         color: Colors.purple),
-                    // iconColor: Colors.purple,
-                    // suffixIconColor: Colors.purple,
                     labelText: 'Search',
                     hintText: 'Введите значение',
                     enabledBorder: OutlineInputBorder(
