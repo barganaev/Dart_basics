@@ -8,6 +8,7 @@ import 'package:skill_box_homeworks/hw_4.dart';
 import 'package:skill_box_homeworks/hw_5.dart';
 import 'package:skill_box_homeworks/hw_6/hw_6.dart';
 import 'package:skill_box_homeworks/hw_7/hw_7.dart';
+import 'package:skill_box_homeworks/hw_8.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,58 +51,68 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
 
-            // HomeWork #2
-            ElevatedButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HW2Screen()));
-              },
-              child: Text('Go to Another Screen')
-            ),
-
-            // HomeWork #3
-            ElevatedButton(
+              // HomeWork #2
+              ElevatedButton(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork3()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HW2Screen()));
                 },
-                child: Text('Go to Home3 Screen')
-            ),
+                child: Text('Go to Another Screen')
+              ),
 
-            // HomeWork #4
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork4()));
-                },
-                child: Text('Go to Home4 Screen')
-            ),
+              // HomeWork #3
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork3()));
+                  },
+                  child: Text('Go to Home3 Screen')
+              ),
 
-            // HomeWork #5
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork5()));
-                },
-                child: Text('Go to Home5 Screen')
-            ),
+              // HomeWork #4
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork4()));
+                  },
+                  child: Text('Go to Home4 Screen')
+              ),
 
-            // HomeWork #6
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork6()));
-                },
-                child: Text('Go to Home6 Screen')
-            ),
+              // HomeWork #5
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork5()));
+                  },
+                  child: Text('Go to Home5 Screen')
+              ),
 
-            // HomeWork #7
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HoweWork7()));
-                },
-                child: Text('Go to Home7 Screen')
-            ),
-          ],
+              // HomeWork #6
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork6()));
+                  },
+                  child: Text('Go to Home6 Screen')
+              ),
+
+              // HomeWork #7
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HoweWork7()));
+                  },
+                  child: Text('Go to Home7 Screen')
+              ),
+
+              // HomeWork #8
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork8()));
+                  },
+                  child: Text('Go to Home8 Screen')
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
