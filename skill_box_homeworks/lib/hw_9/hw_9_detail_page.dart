@@ -34,7 +34,6 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
       print(response.body);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
-        // itemDetail = data.map<ItemDetail>((item) => ItemDetail.fromJson(item)).toList();
         itemDetail = data;
         print(itemDetail.toString());
       } else {
@@ -96,25 +95,22 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                  'Страна: ${itemDetail['address']['country']}' ??
-                                      '0'),
+                                  'Страна: ${itemDetail['address']['country']}'),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                  'Город: ${itemDetail['address']['city']}' ??
-                                      '0'),
+                                  'Город: ${itemDetail['address']['city']}'),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                  'Улица: ${itemDetail['address']['street']}' ??
-                                      '0'),
+                                  'Улица: ${itemDetail['address']['street']}'),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                  'Рейтинг: ${itemDetail['rating']}' ?? '0'),
+                                  'Рейтинг: ${itemDetail['rating']}'),
                             ),
                             const Padding(
                               padding: EdgeInsets.only(top: 20),
@@ -145,7 +141,7 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                       ),
                                       ListView.builder(
                                         shrinkWrap: true,
-                                        itemCount: (itemDetail['services']['paid'] as List).length ?? 0,
+                                        itemCount: (itemDetail['services']['paid'] as List).length,
                                         itemBuilder: (context, index) {
                                           return Text(itemDetail['services']['paid'][index]);
                                         },
@@ -171,7 +167,7 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                       ),
                                       ListView.builder(
                                         shrinkWrap: true,
-                                        itemCount: (itemDetail['services']['free'] as List).length ?? 0,
+                                        itemCount: (itemDetail['services']['free'] as List).length,
                                         itemBuilder: (context, index) {
                                           return Text(itemDetail['services']['free'][index]);
                                         },

@@ -28,12 +28,12 @@ ItemDetail _$ItemDetailFromJson(Map<String, dynamic> json) {
     address: json['address'] == null
         ? null
         : ItemAddress.fromJson(json['address'] as Map<String, dynamic>),
-    price: (json['price'] as num)?.toDouble(),
-    rating: (json['rating'] as num)?.toDouble(),
+    price: (json['price'] as num).toDouble(),
+    rating: (json['rating'] as num).toDouble(),
     services: json['services'] == null
         ? null
         : ItemServices.fromJson(json['services'] as Map<String, dynamic>),
-    photos: (json['photos'] as List)?.map((e) => e as String)?.toList(),
+    photos: (json['photos'] as List).map((e) => e as String).toList(),
   );
 }
 
@@ -72,8 +72,8 @@ Map<String, dynamic> _$ItemAddressToJson(ItemAddress instance) =>
 
 ItemCoords _$ItemCoordsFromJson(Map<String, dynamic> json) {
   return ItemCoords(
-    lat: (json['lat'] as num)?.toDouble(),
-    lan: (json['lan'] as num)?.toDouble(),
+    lat: (json['lat'] as num).toDouble(),
+    lan: (json['lan'] as num).toDouble(),
   );
 }
 
@@ -85,8 +85,8 @@ Map<String, dynamic> _$ItemCoordsToJson(ItemCoords instance) =>
 
 ItemServices _$ItemServicesFromJson(Map<String, dynamic> json) {
   return ItemServices(
-    free: (json['free'] as List)?.map((e) => e as String)?.toList(),
-    paid: (json['paid'] as List)?.map((e) => e as String)?.toList(),
+    free: (json['free'] as List).map((e) => e as String).toList(),
+    paid: (json['paid'] as List).map((e) => e as String).toList(),
   );
 }
 
