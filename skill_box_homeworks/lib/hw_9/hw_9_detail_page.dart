@@ -24,7 +24,7 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
     super.initState();
   }
 
-  /*Future<void> */getData() async {
+  /*Future<void> */ getData() async {
     setState(() {
       isLoading = true;
     });
@@ -77,7 +77,8 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                           return Builder(
                             builder: (BuildContext context) {
                               return Container(
-                                  margin: const EdgeInsets.symmetric(horizontal: 12),
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 12),
                                   color: Colors.grey,
                                   child: Image.asset(
                                     img,
@@ -95,17 +96,20 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                  'Страна: ${itemDetail['address']['country']}' ?? '0'),
+                                  'Страна: ${itemDetail['address']['country']}' ??
+                                      '0'),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                  'Город: ${itemDetail['address']['city']}' ?? '0'),
+                                  'Город: ${itemDetail['address']['city']}' ??
+                                      '0'),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                  'Улица: ${itemDetail['address']['street']}' ?? '0'),
+                                  'Улица: ${itemDetail['address']['street']}' ??
+                                      '0'),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
@@ -139,22 +143,13 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                               fontWeight: FontWeight.w400),
                                         ),
                                       ),
-                                      Text(
-                                          itemDetail['services']['paid'][0].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['paid'][1].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['paid'][2].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['paid'][3].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['paid'][4].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['paid'][5].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['paid'][6].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['paid'][7].toString() ?? '0'),
+                                      ListView.builder(
+                                        shrinkWrap: true,
+                                        itemCount: (itemDetail['services']['paid'] as List).length ?? 0,
+                                        itemBuilder: (context, index) {
+                                          return Text(itemDetail['services']['paid'][index]);
+                                        },
+                                      )
                                     ],
                                   ),
                                 ),
@@ -174,16 +169,13 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                               fontWeight: FontWeight.w400),
                                         ),
                                       ),
-                                      Text(
-                                          itemDetail['services']['free'][0].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['free'][1].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['free'][2].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['free'][3].toString() ?? '0'),
-                                      Text(
-                                          itemDetail['services']['free'][4].toString() ?? '0'),
+                                      ListView.builder(
+                                        shrinkWrap: true,
+                                        itemCount: (itemDetail['services']['free'] as List).length ?? 0,
+                                        itemBuilder: (context, index) {
+                                          return Text(itemDetail['services']['free'][index]);
+                                        },
+                                      )
                                     ],
                                   ),
                                 ),
