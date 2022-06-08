@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ListViewDivider extends StatefulWidget {
-  const ListViewDivider({Key key}) : super(key: key);
+  const ListViewDivider({Key? key}) : super(key: key);
 
   @override
   _ListViewDividerState createState() => _ListViewDividerState();

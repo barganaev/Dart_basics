@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalList extends StatefulWidget {
-  const HorizontalList({Key key}) : super(key: key);
+  const HorizontalList({Key? key}) : super(key: key);
 
   @override
   _HorizontalListState createState() => _HorizontalListState();

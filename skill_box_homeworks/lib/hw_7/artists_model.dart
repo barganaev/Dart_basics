@@ -41,8 +41,8 @@
 // }
 
 class DataModel {
-  String name;
-  String description;
+  String? name;
+  String? description;
 
   DataModel({this.name, this.description});
 

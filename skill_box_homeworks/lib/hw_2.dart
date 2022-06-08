@@ -6,7 +6,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class HW2Screen extends StatefulWidget {
-  const HW2Screen({Key key}) : super(key: key);
+  const HW2Screen({Key? key}) : super(key: key);
 
   @override
   _HW2ScreenState createState() => _HW2ScreenState();

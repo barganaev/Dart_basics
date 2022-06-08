@@ -1,14 +1,13 @@
 import 'dart:convert';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:skill_box_homeworks/hw_9/item_model.dart';
 
 class HomeWork9_Detail_Page extends StatefulWidget {
-  String uuid;
-  HomeWork9_Detail_Page({Key key, this.uuid}) : super(key: key);
+  String? uuid;
+  HomeWork9_Detail_Page({Key? key, this.uuid}) : super(key: key);
 
   @override
   _HomeWork9_Detail_PageState createState() => _HomeWork9_Detail_PageState();
@@ -64,9 +63,9 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
     return Scaffold(
       appBar: AppBar(),
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : hasError
-              ? Center(
+              ? const Center(
                   child: Text('Контент временно недоступен'),
                 )
               : SingleChildScrollView(
@@ -78,10 +77,10 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                           return Builder(
                             builder: (BuildContext context) {
                               return Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 12),
+                                  margin: const EdgeInsets.symmetric(horizontal: 12),
                                   color: Colors.grey,
                                   child: Image.asset(
-                                    '${img}',
+                                    img,
                                     fit: BoxFit.cover,
                                   ));
                             },
@@ -89,31 +88,31 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                         }).toList(),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(top: 5),
+                              padding: const EdgeInsets.only(top: 5),
                               child: Text(
                                   'Страна: ${itemDetail['address']['country']}' ?? '0'),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: 5),
+                              padding: const EdgeInsets.only(top: 5),
                               child: Text(
                                   'Город: ${itemDetail['address']['city']}' ?? '0'),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: 5),
+                              padding: const EdgeInsets.only(top: 5),
                               child: Text(
                                   'Улица: ${itemDetail['address']['street']}' ?? '0'),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: 5),
+                              padding: const EdgeInsets.only(top: 5),
                               child: Text(
                                   'Рейтинг: ${itemDetail['rating']}' ?? '0'),
                             ),
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.only(top: 20),
                               child: Text(
                                 'Сервисы',
@@ -130,7 +129,7 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Padding(
+                                      const Padding(
                                         padding:
                                             EdgeInsets.symmetric(vertical: 8),
                                         child: Text(
@@ -141,21 +140,21 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                         ),
                                       ),
                                       Text(
-                                          '${itemDetail['services']['paid'][0].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][0].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['paid'][1].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][1].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['paid'][2].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][2].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['paid'][3].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][3].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['paid'][4].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][4].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['paid'][5].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][5].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['paid'][6].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][6].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['paid'][7].toString()}' ?? '0'),
+                                          itemDetail['services']['paid'][7].toString() ?? '0'),
                                     ],
                                   ),
                                 ),
@@ -165,7 +164,7 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Padding(
+                                      const Padding(
                                         padding:
                                             EdgeInsets.symmetric(vertical: 8),
                                         child: Text(
@@ -176,15 +175,15 @@ class _HomeWork9_Detail_PageState extends State<HomeWork9_Detail_Page> {
                                         ),
                                       ),
                                       Text(
-                                          '${itemDetail['services']['free'][0].toString()}' ?? '0'),
+                                          itemDetail['services']['free'][0].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['free'][1].toString()}' ?? '0'),
+                                          itemDetail['services']['free'][1].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['free'][2].toString()}' ?? '0'),
+                                          itemDetail['services']['free'][2].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['free'][3].toString()}' ?? '0'),
+                                          itemDetail['services']['free'][3].toString() ?? '0'),
                                       Text(
-                                          '${itemDetail['services']['free'][4].toString()}' ?? '0'),
+                                          itemDetail['services']['free'][4].toString() ?? '0'),
                                     ],
                                   ),
                                 ),

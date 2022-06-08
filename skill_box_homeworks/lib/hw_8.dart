@@ -6,7 +6,7 @@ Future<String> fetchFileFromAssets(String assetsPath) {
 }
 
 class HomeWork8 extends StatefulWidget {
-  const HomeWork8({Key key}) : super(key: key);
+  const HomeWork8({Key? key}) : super(key: key);
 
   @override
   _HomeWork8State createState() => _HomeWork8State();
@@ -15,7 +15,7 @@ class HomeWork8 extends StatefulWidget {
 class _HomeWork8State extends State<HomeWork8> {
   final textController = TextEditingController();
   bool isFileFounded = false;
-  String Ftext;
+  String? Ftext;
 
   @override
   void initState() {

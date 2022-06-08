@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class TabItem {
-  String title;
-  Icon icon;
+  String? title;
+  Icon? icon;
   TabItem({this.title, this.icon});
 }
 
@@ -14,7 +14,7 @@ final List<TabItem> _tabBar = [
 ];
 
 class HomeWork5 extends StatefulWidget {
-  const HomeWork5({Key key}) : super(key: key);
+  const HomeWork5({Key? key}) : super(key: key);
 
   @override
   _HomeWork5State createState() => _HomeWork5State();
@@ -28,17 +28,17 @@ class _HomeWork5State extends State<HomeWork5> with SingleTickerProviderStateMix
   //   scaffoldKey.currentState.openEndDrawer();
   // }
 
-  TabController _tabController;
+  TabController? _tabController;
   int _currentTabIndex = 0;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: _tabBar.length, vsync: this);
-    _tabController.addListener(() {
-      print('Listener: ${_tabController.index}');
+    _tabController?.addListener(() {
+      print('Listener: ${_tabController?.index}');
       setState(() {
-        _currentTabIndex = _tabController.index;
+        _currentTabIndex = _tabController!.index; // TODO: НЕЖЕЛАТЕЛЬНО!!!
       });
     });
   }
@@ -148,7 +148,7 @@ class _HomeWork5State extends State<HomeWork5> with SingleTickerProviderStateMix
           child: BottomNavigationBar(
             onTap: (index) {
               setState(() {
-                _tabController.index = index;
+                _tabController?.index = index;
                 _currentTabIndex = index;
               });
             },
@@ -158,7 +158,7 @@ class _HomeWork5State extends State<HomeWork5> with SingleTickerProviderStateMix
               for (final item in _tabBar)
                 BottomNavigationBarItem(
                   label: item.title,
-                  icon: item.icon
+                  icon: item.icon ?? Icon(Icons.add) // TODO: Not necessary Icon
                 )
             ],
           ),

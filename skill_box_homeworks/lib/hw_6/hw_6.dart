@@ -5,7 +5,7 @@ import 'package:skill_box_homeworks/hw_6/sliver_widgets.dart';
 import 'package:skill_box_homeworks/hw_6/text_field_styled.dart';
 
 class HomeWork6 extends StatefulWidget {
-  const HomeWork6({Key key}) : super(key: key);
+  const HomeWork6({Key? key}) : super(key: key);
 
   @override
   _HomeWork6State createState() => _HomeWork6State();

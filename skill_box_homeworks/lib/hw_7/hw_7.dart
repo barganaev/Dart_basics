@@ -9,7 +9,7 @@ import 'artists_model.dart';
 
 
 class HoweWork7 extends StatefulWidget {
-  const HoweWork7({Key key}) : super(key: key);
+  const HoweWork7({Key? key}) : super(key: key);
 
   @override
   _HoweWork7State createState() => _HoweWork7State();

@@ -4,11 +4,11 @@ part 'item_model.g.dart';
 
 @JsonSerializable()
 class Item {
-  final String uuid;
-  final String name;
+  final String? uuid;
+  final String? name;
 
   @JsonKey(name: 'poster')
-  final String postt;
+  final String? postt;
 
   Item({this.uuid, this.name, this.postt});
 
@@ -24,14 +24,14 @@ class Item {
 
 @JsonSerializable()
 class ItemDetail {
-  final String uuid;
-  final String name;
-  final String poster;
-  final ItemAddress address;
-  final double price;
-  final double rating;
-  final ItemServices services;
-  final List<String> photos;
+  final String? uuid;
+  final String? name;
+  final String? poster;
+  final ItemAddress? address;
+  final double? price;
+  final double? rating;
+  final ItemServices? services;
+  final List<String>? photos;
 
   ItemDetail({
     this.uuid,
@@ -58,11 +58,11 @@ class ItemAddress {
     this.coords,
   });
 
-  final String country;
-  final String street;
-  final String city;
-  final int zipCode;
-  final ItemCoords coords;
+  final String? country;
+  final String? street;
+  final String? city;
+  final int? zipCode;
+  final ItemCoords? coords;
 
   factory ItemAddress.fromJson(Map<String, dynamic> json) => _$ItemAddressFromJson(json);
   Map<String, dynamic> toJson() => _$ItemAddressToJson(this);
@@ -75,8 +75,8 @@ class ItemCoords {
     this.lan,
   });
 
-  final double lat;
-  final double lan;
+  final double? lat;
+  final double? lan;
 
   factory ItemCoords.fromJson(Map<String, dynamic> json) => _$ItemCoordsFromJson(json);
   Map<String, dynamic> toJson() => _$ItemCoordsToJson(this);
@@ -89,8 +89,8 @@ class ItemServices {
     this.paid,
   });
 
-  final List<String> free;
-  final List<String> paid;
+  final List<String>? free;
+  final List<String>? paid;
 
   factory ItemServices.fromJson(Map<String, dynamic> json) => _$ItemServicesFromJson(json);
   Map<String, dynamic> toJson() => _$ItemServicesToJson(this);

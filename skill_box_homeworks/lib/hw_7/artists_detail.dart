@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ArtistsDetail extends StatefulWidget {
-  String name;
-  String desc;
-  ArtistsDetail({Key key, this.name, this.desc}) : super(key: key);
+  String? name;
+  String? desc;
+  ArtistsDetail({Key? key, this.name, this.desc}) : super(key: key);
 
   @override
   _ArtistsDetailState createState() => _ArtistsDetailState();
