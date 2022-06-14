@@ -1,6 +1,7 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:skill_box_homeworks/hw_10/login_view.dart';
+import 'package:skill_box_homeworks/hw_11/hw_11.dart';
 
 // Project imports:
 import 'package:skill_box_homeworks/hw_2.dart';
@@ -128,6 +129,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
                   },
                   child: Text('Go to Home10 Screen')
+              ),
+
+              // HomeWork #11
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeWork11()));
+                  },
+                  child: Text('Go to Home11 Screen')
               ),
             ],
           ),
