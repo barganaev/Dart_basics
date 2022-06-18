@@ -23,9 +23,11 @@ class _HomeWork11State extends State<HomeWork11> {
             ...spaces.map((space) {
               return GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => HomeWork11_Detial_View(data: space)
+                  Navigator.push(
+                    context, MaterialPageRoute(
+                      builder: (context) => HomeWork11_Detial_View(
+                        data: space,
+                      )
                     )
                   );
                 },
@@ -42,32 +44,34 @@ class _HomeWork11State extends State<HomeWork11> {
                     child: Hero(
                       tag: space.id ?? 0,
                       child: Container(
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                topRight: Radius.circular(15)
-                              ),
-                              child: AspectRatio(
-                                aspectRatio: 16/4,
-                                child: Image(
-                                  image: AssetImage(space.image ?? 'assets/images/spaces/space_1.jpg'),
-                                  fit: BoxFit.fill,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  topRight: Radius.circular(15)
                                 ),
-                              )
-                              // Image.asset(
-                              //   space.image ?? 'assets/images/spaces/space_1.jpg',
-                              // )
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 20,
-                                horizontal: 20
+                                child: AspectRatio(
+                                  aspectRatio: 16/4,
+                                  child: Image(
+                                    image: AssetImage(space.image ?? 'assets/images/spaces/space_1.jpg'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                )
+                                // Image.asset(
+                                //   space.image ?? 'assets/images/spaces/space_1.jpg',
+                                // )
                               ),
-                              child: Text(space.description ?? '', overflow: TextOverflow.ellipsis,),
-                            ),
-                          ],
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 20,
+                                  horizontal: 20
+                                ),
+                                child: Text(space.description ?? '', overflow: TextOverflow.ellipsis,),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

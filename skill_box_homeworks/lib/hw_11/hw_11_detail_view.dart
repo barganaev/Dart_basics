@@ -15,8 +15,19 @@ class HomeWork11_Detial_View extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(this.data?.image ?? 'assets/images/spaces/space_1.jpg'),
-            Text('${this.data?.description}' ?? '')
+            Hero(
+              tag: data?.id ?? 0,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Image.asset(
+                      data?.image ?? 'assets/images/spaces/space_1.jpg'
+                    ),
+                    Text('${data?.description}')
+                  ],
+                ),
+              )
+            ),
           ],
         ),
       ),
